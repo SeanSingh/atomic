@@ -2,7 +2,7 @@
 curl -O https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_secondboot.sh
 curl -O https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_thirdboot.sh
 user=$(whoami)
-sudo echo "$user ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "$user ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 rpm-ostree pkg-add epel-release
 rpm-ostree pkg-add ansible
 rpm-ostree ex livefs
