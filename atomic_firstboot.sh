@@ -1,6 +1,8 @@
 # get this file with: curl -OL https://tinyurl.com/atomic-first
-curl https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_secondboot.sh
-curl https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_thirdboot.sh
+curl -O https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_secondboot.sh
+curl -O https://raw.githubusercontent.com/SeanSingh/atomic/master/atomic_thirdboot.sh
+user=$(whoami)
+sudo echo "$user ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 rpm-ostree pkg-add epel-release
 rpm-ostree pkg-add ansible
 rpm-ostree ex livefs
